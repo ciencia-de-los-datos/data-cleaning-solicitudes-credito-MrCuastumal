@@ -26,7 +26,6 @@ def clean_data():
     df['monto_del_credito'] = df['monto_del_credito'].str.replace(r'[^\d.]', '', regex=True).astype(float)
     df['línea_credito'] = df['línea_credito'].str.lower().astype('category')
     df['línea_credito'] = df['línea_credito'].str.replace("_|-", " ", regex=True)
-    
     df.dropna(axis='index',inplace=True)
     df.drop_duplicates(inplace=True)
 
